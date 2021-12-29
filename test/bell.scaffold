@@ -1,0 +1,13 @@
+int main () {
+	qbit q1[1];
+	qbit q2[1];
+
+	H(q1[0]);
+	CNOT(q2[0], q1[0]);
+
+	cbit c[2];
+	c[1] = MeasZ(q2[0]);
+	c[0] = MeasZ(q1[0]);
+
+	return 0;
+}

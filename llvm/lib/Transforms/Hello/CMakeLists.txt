@@ -12,10 +12,10 @@ endif()
 
 add_llvm_library( LLVMHello MODULE BUILDTREE_ONLY
   Hello.cpp
-  TestPass.cpp
 
   DEPENDS
   intrinsics_gen
   PLUGIN_TOOL
   opt
   )
+

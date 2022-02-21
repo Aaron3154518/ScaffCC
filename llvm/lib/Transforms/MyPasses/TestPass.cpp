@@ -8,15 +8,15 @@
 using namespace llvm;
 
 namespace {
-	struct TestPass : public ModulePass {
+	struct TestPass : public FunctionPass {
 		static char ID; // Pass Identification
 
-		TestPass() : ModulePass(ID) {
-			std::cout << "Test Pass: " << ID << std::endl;
+		TestPass() : FunctionPass(ID) {
+			std::cerr << "Test Pass: " << ID << std::endl;
 		}
 
 		bool runOnFunction(Function &F) override {
-			std::cout << "Hello" << std::endl;
+			std::cerr << "Hello" << std::endl;
 			return false;
 		}
 	};

@@ -11,6 +11,7 @@
 //
 //===----------------------------------------------------------------------===//
 
+#include <iostream>
 #include "llvm/ADT/Statistic.h"
 #include "llvm/IR/Function.h"
 #include "llvm/Pass.h"
@@ -28,6 +29,7 @@ namespace {
     Hello() : FunctionPass(ID) {}
 
     bool runOnFunction(Function &F) override {
+      std::cerr << "Hello World" << std::endl;
       ++HelloCounter;
       errs() << "Hello: ";
       errs().write_escaped(F.getName()) << '\n';

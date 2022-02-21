@@ -11,5 +11,5 @@ echo "Pass Name: $2"
 echo "Input File: $3"
 echo "Output File: $4"
 echo "../build/bin/opt -S -load ../build/lib/$1 -$2 $3 > $4 2> out.txt"
-#../build/bin/opt -S -load ../build/lib/LLVM$1.so -$2 $3 > $4 2> out.txt
+../build/bin/opt -S -load ../build/lib/$1 -$2 $3 > $4 2> out.txt
 cat out.txt
